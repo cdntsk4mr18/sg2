@@ -1,5 +1,5 @@
 <?php 
-    require("config.php"); 
+    require("../config.php"); 
     $submitted_username = ''; 
     if(!empty($_POST)){ 
         $query = " 
@@ -9,7 +9,7 @@
                 password, 
                 salt, 
                 email 
-            FROM users 
+            FROM users_admin 
             WHERE 
                 username = :username 
         "; 
@@ -59,6 +59,11 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
     <link href="assets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+        body { background: url(images/logo2.png); background-repeat: no-repeat; background-attachment: fixed; background-position: center; }
+        .hero-unit { background-color: transparent; }
+        .center { display: block; margin: 0 auto; }
+    </style>	
 </head>
 
 <body>
@@ -97,51 +102,7 @@
 </div>
 
 <div class="container" style="position:relative; top:60px;">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <style>
-  .carousel-inner{
-	width:100%;
-	height:100%;
-  }
-  .carousel-caption {
-    top: 0;
-    bottom: auto;
-  }  
-  </style>
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="images/gg1.jpg" alt="caption">
-      <div class="carousel-caption">
-        <h3>title</h3>
-        <p>caption</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/gg1.jpg" alt="caption">
-      <div class="carousel-caption">
-        <h3>title</h3>
-        <p>caption</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/gg1.jpg" alt="New caption">
-      <div class="carousel-caption">
-        <h3>title</h3>
-        <p>caption</p>
-      </div>
-    </div>
-  </div>
-</div>
+<h1>welcome to admin portal</h1>
 </div>
 
 </body>

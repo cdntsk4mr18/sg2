@@ -1,5 +1,5 @@
 <?php
-    require("config.php");
+    require("../config.php");
     if(empty($_SESSION['user'])) 
     {
         header("Location: index.php");
@@ -47,6 +47,8 @@
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                 <form action="#" method="post"> 
                 <a class="btn btn-info" href="profile.php">Profiles</a>
+                <a class="btn btn-info" href="create-account.php" id="caccount" style="display:none;">Create Account</a>
+                <a class="btn btn-info" href="report.php">submit report</a>
                 <a class="btn btn-info" href="logout.php">Log Out</a>
                 </form> 
             </div></li>
@@ -57,52 +59,15 @@
 </div>
 
 <div class="container hero-unit">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <style>
-  .carousel-inner{
-	width:100%;
-	height:100%;
-  }
-  .carousel-caption {
-    top: 0;
-    bottom: auto;
-  }  
-  </style>
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="images/gg1.jpg" alt="caption">
-      <div class="carousel-caption">
-        <h3>title</h3>
-        <p>caption</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/gg1.jpg" alt="caption">
-      <div class="carousel-caption">
-        <h3>title</h3>
-        <p>caption</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/gg1.jpg" alt="New caption">
-      <div class="carousel-caption">
-        <h3>title</h3>
-        <p>caption</p>
-      </div>
-    </div>
-  </div>
-</div>
+<span style="visibility:hidden;" id="hidden"><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></span>
 </div>
 
 </body>
+<script>
+if ($("#hidden").text() == "admin")
+{
+    // do something
+	$("#caccount").show();
+}
+</script>
 </html>

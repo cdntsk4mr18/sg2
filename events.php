@@ -47,14 +47,14 @@ $events = $req->fetchAll();
         <ul class="nav pull-right">
           <li><a href="secret.php">Home</a></li>
           <li><a href="news.php">News</a></li>
-          <li><a href="events.php">Events</a></li>			
+          <li><a href="events.php">Events</a></li>	
+          <li><a href="suggestions.php">Suggestions</a></li>			  
           <li class="divider-vertical"></li>
           <li>            
 		  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>  <strong class="caret"></strong></a>
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                 <form action="#" method="post"> 
-                <a class="btn btn-info" href="profile.php">Profiles</a>
-                <a class="btn btn-info" href="report.php">submit report</a>				
+                <a class="btn btn-info" href="profile.php">Profiles</a>		
                 <a class="btn btn-info" href="logout.php">Log Out</a>
                 </form> 
             </div></li>
@@ -71,12 +71,6 @@ $events = $req->fetchAll();
 
 </body>
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-	
 	<!-- FullCalendar -->
 	<script src='js/moment.min.js'></script>
 	<script src='js/fullcalendar.min.js'></script>

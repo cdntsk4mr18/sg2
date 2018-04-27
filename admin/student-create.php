@@ -1,5 +1,5 @@
 <?php 
-    require("config.php");
+    require("../config.php");
     if(!empty($_POST)) 
     { 
         // Ensure that the user fills out fields 
@@ -50,12 +50,14 @@
                 username, 
                 password, 
                 salt, 
-                email 
+                email,
+				department
             ) VALUES ( 
                 :username, 
                 :password, 
                 :salt, 
-                :email 
+                :email,
+				:department
             ) 
         "; 
          
@@ -67,15 +69,16 @@
             ':username' => $_POST['username'], 
             ':password' => $password, 
             ':salt' => $salt, 
-            ':email' => $_POST['email'] 
+            ':email' => $_POST['email'], 
+            ':department' => $_POST['department'] 
         ); 
         try {  
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        header("Location: index.php"); 
-        die("Redirecting to index.php"); 
+        header("Location: student-create.php"); 
+        die("Redirecting to student-create.php"); 
     } 
 ?>
 <!doctype html>
@@ -109,7 +112,7 @@
       <a class="brand"><img src="images/logo2.png" alt="blog" width="26.1" height="18.95" class="img-responsive"> <span style="position:relative; top:2px;">CSA-B Student Government Management System</span></a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
-          <li><a href="index.php">Return Home</a></li>
+          <li><a href="secret.php">Return Home</a></li>
         </ul>
       </div>
     </div>
@@ -117,8 +120,15 @@
 </div>
 
 <div class="container hero-unit">
-    <h1>Register</h1> <br /><br />
-    <form action="register.php" method="post"> 
+    <h1>Create Student Account</h1> <br /><br />
+    <form action="student-create.php" method="post"> 
+        <label>Department:</label> 
+		  <select class="form-control" id="departmentid" name="department">
+		  <option>CABECS</option>
+          <option>CASE</option>
+          <option>NURSING</option>
+          <option>ENGINEERING</option>
+        </select>
         <label>Username:</label> 
         <input type="text" name="username" value="" /> 
         <label>Email: <strong style="color:darkred;">*</strong></label> 
