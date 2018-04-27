@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand"></a>
+      <a class="brand"><img src="images/logo2.png" alt="blog" width="26.1" height="18.95" class="img-responsive"> <span style="position:relative; top:2px;">CSA-B Student Government Management System</span></a>
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <li class="active"><a href="index.php">Home</a></li>
