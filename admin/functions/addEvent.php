@@ -30,12 +30,7 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	}
 
 
-//##########################################################################
-// ITEXMO SEND SMS API - PHP - CURL-LESS METHOD
-// Visit www.itexmo.com/developers.php for more info about this API
-//##########################################################################
 
-//##########################################################################
 
 $sql_2 = "SELECT mobile_number FROM users";
 //$result_2 = $db->prepare( $sql_2 );
@@ -50,11 +45,11 @@ $user_number = $req->fetchAll();
 foreach($user_number as $user_numbers): 
 			
 				
-					$number=$user_numbers['mobile_number'];
-			        $api="TR-JRVAL728059_QKJYA";
-			        $text = "What:".$title."\n".
-			        		"When:".$start."-".$end."\n".
-			        		"Time:".$time;
+		$number=$user_numbers['mobile_number'];
+		$api="TR-JRVAL728059_QKJYA";
+		$text = "What:".$title."\n".
+			    "When:".$start."-".$end."\n".
+			    "Time:".$time;
 
 			        $result_text = itexmo($number,$text,$api);
 
@@ -71,6 +66,14 @@ foreach($user_number as $user_numbers):
 
 			endforeach;
 }
+
+
+//##########################################################################
+// ITEXMO SEND SMS API - PHP - CURL-LESS METHOD
+// Visit www.itexmo.com/developers.php for more info about this API
+//##########################################################################
+
+//##########################################################################
 
 function itexmo($number,$message,$apicode){
 $url = 'https://www.itexmo.com/php_api/api.php';
