@@ -223,16 +223,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myPage">HOME</a></li>
-        <li><a href="#news">NEWS</a></li>		
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#events">EVENTS</a></li>
-        <li><a href="#suggestions">SUGGESTIONS</a></li>
+        <li><a href="secret.php">HOME</a></li>
           <li>            
 		  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?> <strong class="caret"></strong></a>
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                 <form action="#" method="post"> 
-                <a class="btn btn-danger" href="profile.php" style="margin-left:10px; margin-bottom:15px;">Profiles</a>
+                <a class="btn btn-danger" href="profile.php" style="margin-left:10px; margin-bottom:15px;">View Profile</a>
                 <a class="btn btn-danger" href="logout.php" style="margin-left:10px; margin-bottom:15px;">Log Out</a>
                 </form> 
             </div></li>
