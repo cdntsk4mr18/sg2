@@ -51,13 +51,15 @@
                 password, 
                 salt, 
                 email,
-				department
+				department,
+				mobile_number
             ) VALUES ( 
                 :username, 
                 :password, 
                 :salt, 
                 :email,
-				:department
+				:department,
+				:mobile_number
             ) 
         "; 
          
@@ -70,7 +72,8 @@
             ':password' => $password, 
             ':salt' => $salt, 
             ':email' => $_POST['email'], 
-            ':department' => $_POST['department'] 
+            ':department' => $_POST['department'],
+            ':mobile_number' => $_POST['mobile_number'] 
         ); 
         try {  
             $stmt = $db->prepare($query); 
@@ -134,7 +137,9 @@
         <label>Email: <strong style="color:darkred;">*</strong></label> 
         <input type="text" name="email" value="" /> 
         <label>Password:</label> 
-        <input type="password" name="password" value="" /> <br /><br />
+        <input type="password" name="password" value="" /> <br />
+        <label>Mobile Number:</label> 		
+        <input type="number" name="mobile_number" value="" /> <br />
         <p style="color:darkred;"></p><br />
         <input type="submit" class="btn btn-info" value="Register" /> 
     </form>
