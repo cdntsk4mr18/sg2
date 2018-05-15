@@ -37,19 +37,18 @@ $sql_2 = "SELECT mobile_number FROM users";
 
 $req = $db->prepare($sql_2);
 $req->execute();
-
 $user_number = $req->fetchAll();
 
-
-
+//loop all user numbers
 foreach($user_number as $user_numbers): 
 			
 				
 		$number=$user_numbers['mobile_number'];
 		$api="TR-JRVAL728059_QKJYA";
-		$text = "What:".$title."\n".
-			    "When:".$start."-".$end."\n".
-			    "Time:".$time;
+		$text = "From:CSAB"."\n".
+				"What:".$title."\n".
+				"When:".$start."-".$end."\n".
+				"Time:".$time;
 
 			        $result_text = itexmo($number,$text,$api);
 
