@@ -248,7 +248,7 @@ $events = $req->fetchAll();
   </div>
 </nav>
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" style="background-image: url('images/igol2.png');">
   <h1>CSA-B Student Government <br> Management System</h1> 
 </div>
 
@@ -256,7 +256,7 @@ $events = $req->fetchAll();
 <div id="news" class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
-      <h2>NEWS</h2><br>
+	  <h2>NEWS</h2><br>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -275,7 +275,7 @@ $events = $req->fetchAll();
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-pushpin logo"></span>
+      <span class="glyphicon glyphicon-pushpin logo" ></span>
     </div>
   </div>
 </div>
@@ -305,7 +305,7 @@ $events = $req->fetchAll();
 </div>
 
 <!-- Container (suggestions Section) -->
-<div id="suggestions" class="container-fluid" style="background-color:#f4511e;">
+<div id="suggestions" class="container-fluid" style="background-color:#f4511e; background-image: url('images/igol2.png');">
   <div class="row">
     <div class="col-sm-12">
 	<div class="col-sm-12">
@@ -326,6 +326,31 @@ $events = $req->fetchAll();
 				</form>	    
 	</div>
   </div>
+  
+<button type="button" id="modalss" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="visibility:hidden;">Modal Success</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" style="position:relative; top:-350px;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <p>Thank you very much for your suggestion. We really appreciate the time you took to think about it and we find it to be very helpful.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>  
+  
+  
 </div>
 
 <footer class="container-fluid text-center">
@@ -333,7 +358,11 @@ $events = $req->fetchAll();
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
 </footer>
-
+<?php
+if (!empty($_GET['doaction']) && $_GET['doaction'] == messagesent ){
+echo '<script>document.getElementById("modalss").click();</script>';
+}
+?>
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link

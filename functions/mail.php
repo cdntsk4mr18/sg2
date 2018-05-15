@@ -14,6 +14,14 @@ require '../vendor/autoload.php';
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 
+$mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+    );
+
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
 
@@ -42,7 +50,7 @@ $mail->SMTPAuth = true;
 $mail->Username = "suggestions.csab.sg@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "csab123";
+$mail->Password = "csab12345";
 
 //Set who the message is to be sent from
 $mail->setFrom('suggestions.csab.sg@gmail.com', 'csab-sg');
@@ -51,10 +59,10 @@ $mail->setFrom('suggestions.csab.sg@gmail.com', 'csab-sg');
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 
 //Set who the message is to be sent to
-$mail->addAddress('suggestions.csab.sg@gmail.com', 'csab-sb.ph.com');
+$mail->addAddress('suggestions.csab.sg@gmail.com', 'csab-sg.ph');
 
 //Set the subject line
-$mail->Subject = '[CSAB-SG SUGGESTIONS]New Comment from '.$_POST['fullName'];
+$mail->Subject = '[CSAB-SG SUGGESTIONS]New suggestion from '.$_POST['fullName'];
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
@@ -111,6 +119,7 @@ if (!$mail->send()) {
     $response['status']="success";
     $response['message']="Message Sent";
     echo json_encode($response);
+	header("Location: ../secret.php?doaction=messagesent#suggestions");
 }
 //$response['status']="error";
 
@@ -144,7 +153,7 @@ function sent_to_client($client_mail,$client_name){
         $mail_client->SMTPSecure = 'ssl';
         $mail_client->SMTPAuth = true;
         $mail_client->Username = "suggestions.csab.sg@gmail.com";
-        $mail_client->Password = "csab123";
+        $mail_client->Password = "csab12345";
         $mail_client->setFrom('suggestions.csab.sg@gmail.com', 'csab-sg');
         $mail_client->addAddress($client_mail, $client_mail);
         $mail_client->Subject = 'csab-sg';
