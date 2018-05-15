@@ -305,13 +305,26 @@ $events = $req->fetchAll();
 </div>
 
 <!-- Container (suggestions Section) -->
-<div id="suggestions" class="container-fluid bg-grey">
+<div id="suggestions" class="container-fluid" style="background-color:#f4511e;">
   <div class="row">
     <div class="col-sm-12">
-      <h2>SUGGESTIONS</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+	<div class="col-sm-12">
+      <h2 style="color:white;">SUGGESTIONS</h2><br>
+	 </div>
+				<form class="contact-form" id="contact-form" name="contact-form" method="POST" action="functions/mail.php">
+				<div class="form-group">
+				<div class="col-sm-6">				
+				<input class="form-control" type="text" name="fullName" placeholder="Name" required=""><br>
+				<input class="form-control" type="number" name="phone" placeholder="Phone" required><br>
+				<input class="form-control" type="email" name="email" placeholder="Email" required><br>
+				</div>
+				<div class="col-sm-6">				
+				<textarea style="height:95px; resize: none;" class="form-control" name="comment" placeholder="Message"></textarea><br>
+				<button class="btn btn-default" type="submit">Submit</button>			
+				</div>					
+				</div>				
+				</form>	    
+	</div>
   </div>
 </div>
 
