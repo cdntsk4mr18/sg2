@@ -19,7 +19,7 @@ $events = $req->fetchAll();
     <meta charset="utf-8">
     <title>SG</title>
     <meta name="description" content="">
-    <meta name="author" content="Untame.net">
+    <meta name="author" content="">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
@@ -218,8 +218,8 @@ $events = $req->fetchAll();
 			selectHelper: true,
 			select: function(start, end) {
 				
-				$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
-				$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+				$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD'));
+				$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD'));
 				$('#ModalAdd').modal('show');
 			},
 			eventRender: function(event, element) {
@@ -270,9 +270,9 @@ $events = $req->fetchAll();
 		});
 		
 		function edit(event){
-			start = event.start.format('YYYY-MM-DD HH:mm:ss');
+			start = event.start.format('YYYY-MM-DD');
 			if(event.end){
-				end = event.end.format('YYYY-MM-DD HH:mm:ss');
+				end = event.end.format('YYYY-MM-DD');
 			}else{
 				end = start;
 			}
