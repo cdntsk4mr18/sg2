@@ -35,6 +35,7 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 $sql_2 = "SELECT mobile_number FROM users";
 //$result_2 = $db->prepare( $sql_2 );
 
+$new_time= date('h:i a', strtotime($time));
 $req = $db->prepare($sql_2);
 $req->execute();
 $user_number = $req->fetchAll();
@@ -47,8 +48,8 @@ foreach($user_number as $user_numbers):
 		$api="TR-JRVAL728059_QKJYA";
 		$text = "From:CSAB"."\n".
 				"What:".$title."\n".
-				"When:".$start."-".$end."\n".
-				"Time:".$time;
+				"When:".$start." to ".$end."\n".
+				"Time:".$new_time;
 
 			        $result_text = itexmo($number,$text,$api);
 

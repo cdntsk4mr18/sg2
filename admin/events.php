@@ -189,6 +189,7 @@ $events = $req->fetchAll();
 				
 			  </div>
 			  <div class="modal-footer">
+			  	<input type="submit" class="btn btn-success pull-left" value="Send SMS" name="send_sms"/>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				<button type="submit" class="btn btn-primary">Save changes</button>
 			  </div>
