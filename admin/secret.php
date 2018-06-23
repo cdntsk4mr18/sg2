@@ -45,11 +45,11 @@
           <li>            
 		  <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?> <strong class="caret"></strong></a>
             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                <form action="#" method="post"> 
-                <a class="btn btn-info" href="profile.php">Profiles</a>
-                <a class="btn btn-info" href="create-account.php" id="caccount" style="display:none;">Create Account</a>
-                <a class="btn btn-info" href="report.php">submit report</a>
-                <a class="btn btn-info" href="logout.php">Log Out</a>
+                <form action="#" method="post" style="padding:10px;"> 
+                <a href="profile.php" style="color:black;">Profiles</a><br>
+                <a href="create-account.php" id="caccount" style="display:none; color:black;">Create Account</a><br>				
+                <a href="report.php" style="color:black;">submit report</a><br>				
+                <a href="logout.php" style="color:black;">Log Out</a>
                 </form> 
             </div></li>
         </ul>

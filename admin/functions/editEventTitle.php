@@ -78,7 +78,7 @@ if(isset($_POST['send_sms']) && isset($_POST['id'])){
 					
 						
 		$number=$user_numbers['mobile_number'];
-		$api="TR-JRVAL728059_QKJYA";
+		$api="TR-JOHNJ479456_2C3FN";
 		$text = "Event Reminder"."\n".
 				"From: CSAB"."\n".
 				"What: ".$title."\n".
